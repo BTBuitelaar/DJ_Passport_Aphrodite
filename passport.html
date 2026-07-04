@@ -62,8 +62,8 @@ z-index: 2;
 display: flex;
 align-items: center;
 justify-content: center;
-padding: 22px 40px;
-border-radius: 28px;
+padding: 13px 24px;
+border-radius: 17px;
 }
 
 .glass-canvas {
@@ -78,7 +78,7 @@ pointer-events: none;
 }
 
 .glass-chip {
-border: 1px solid rgba(255, 255, 255, 0.65);
+border: 1px solid rgba(255, 255, 255, 0.45);
 box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 background: rgba(255, 255, 255, 0.18);
 backdrop-filter: blur(6px) saturate(180%);
@@ -86,7 +86,7 @@ backdrop-filter: blur(6px) saturate(180%);
 }
 
 .passport-logo-overlay {
-width: 340px;
+width: 204px;
 height: auto;
 display: block;
 position: relative;
@@ -101,11 +101,11 @@ max-height: 150px;
 max-height: 150px;
 }
 .glass-chip {
-padding: 14px 24px;
-border-radius: 20px;
+padding: 8px 14px;
+border-radius: 12px;
 }
 .passport-logo-overlay {
-width: 240px;
+width: 144px;
 }
 }
 
@@ -448,7 +448,7 @@ letter-spacing: 1px;
 
     var radiusPx = parseFloat(getComputedStyle(chip).borderRadius) || 28;
     geo.radius = radiusPx * dpr;
-    geo.edgeThickness = Math.max(10, radiusPx * 0.7) * dpr;
+    geo.edgeThickness = Math.max(4, radiusPx * 0.35) * dpr;
     geo.refractStrength = 10 * dpr;
     geo.dispersion = 2.2 * dpr;
   }
@@ -477,7 +477,7 @@ letter-spacing: 1px;
     gl.uniform1f(uEdgeThickness, geo.edgeThickness);
     gl.uniform1f(uRefractStrength, geo.refractStrength);
     gl.uniform1f(uDispersion, geo.dispersion);
-    gl.uniform1f(uFresnelIntensity, 0.35);
+    gl.uniform1f(uFresnelIntensity, 0.18);
     gl.uniform1f(uBlurLod, 2.5);
     gl.uniform2f(uRenderedVideoSize, geo.renderedVideoSize[0], geo.renderedVideoSize[1]);
     gl.uniform2f(uVideoOffset, geo.videoOffset[0], geo.videoOffset[1]);
